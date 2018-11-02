@@ -1,0 +1,24 @@
+{
+  "name": "ice-cream",
+  "version": "1.0.0",
+  "description": "A application that utilizes express, handlebars, and mysql.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katiemoon1/ice-cream.git"
+  },
+  "author": "Katie Moon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/katiemoon1/ice-cream/issues"
+  },
+  "homepage": "https://github.com/katiemoon1/ice-cream#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.16.0"
+  }
+}
