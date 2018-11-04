@@ -1,0 +1,37 @@
+<div class='container'>
+    {{!-- Header for the page --}}
+    <div class='row'>
+        <h3>Ice Cream! Yay!</h3>
+    </div>
+    {{!-- Columns for devoured vs. not devoured ice cream --}}
+    <div class='row'>
+        <div class='col-md-6'>
+            <h5>ice cream that is ready to eat!</h5>
+            <ul>
+                {{#each icecream}}
+                    {{#unless devoured}}
+                        {{> icecream devoured=false}}
+                    {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+        <div class='col-md-6'>
+            <h5>ice cream that has been devoured!</h5>
+            <ul>
+                {{#each icecream}}
+                    {{#if devoured}}
+                        {{> icecream devoured=true}}
+                    {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    {{!-- Input box to put new ice cream into the list --}}
+    <form>
+        <div class='form-group'>
+            <label for='inputIceCream'>Enter in your favorite ice cream!</label>
+            <input type='icecream' class='form-control' id='name' placeholder='ice cream!'>
+        </div>
+        <button type='submit' class='btn btn-primary mb-2'>submit!</button>
+    </form>
+</div>

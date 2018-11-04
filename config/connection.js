@@ -6,7 +6,7 @@ const connection = mysql.createConnection({
     host: 'localhost',
     port: 8889,
     user: 'root',
-    password: '',
+    password: NULL,
     database: 'icecream_db'
 })
 
