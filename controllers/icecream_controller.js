@@ -10,6 +10,7 @@ router.get('/', function (req, res) {
             if (error) {
                 throw error
             }
+            console.log(result)
             res.render('index', { icecream: result })
         })
     })
@@ -32,4 +33,5 @@ router.put('/api/icecream/:id', function (req, res) {
         })
     })
 
+// Exporting the router
 module.exports = router

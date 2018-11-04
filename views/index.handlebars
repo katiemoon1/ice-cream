@@ -9,14 +9,8 @@
             <h5>ice cream that is ready to eat!</h5>
             <ul>
                 {{#each icecream}}
-                    {{#unless this.devoured}}
-                        <li>
-                            {{this.name}}
-                            <form action='icecream_controller/put/{{this.id}}?_method=PUT' method='POST'>
-                            <input type='hidden' name='devoured' value='false'>
-                            <button type='submit' class='btn btn-primary mb-2'>eat the ice cream!</button>
-                            </form>
-                        </li>
+                    {{#unless devoured}}
+                        {{> icecream/icecream-block devour=true}}
                     {{/unless}}
                 {{/each}}
             </ul>
@@ -25,10 +19,8 @@
             <h5>ice cream that has been devoured!</h5>
             <ul>
                 {{#each icecream}}
-                    {{#if this.devoured}}
-                        <li>
-                            {{this.name}}
-                        </li>
+                    {{#if devoured}}
+                        {{name}}
                     {{/if}}
                 {{/each}}
             </ul>

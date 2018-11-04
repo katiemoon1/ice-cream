@@ -1,0 +1,8 @@
+{{!-- A block that can be used to generate the list items --}}
+<li>
+    {{name}}
+
+    <button class='change-devoured' data-id='{{id}}' data-newdevour='{{devour}}'>
+        {{#if devour}}eat the ice cream!{{/if}}
+    </button>
+</li>
