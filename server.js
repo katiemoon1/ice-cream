@@ -1,7 +1,7 @@
 // Bringing in all of our dependencies
 const express = require('express')
 const exphbs = require('express-handlebars')
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 3030
 const app = express()
 const routes = require('./controllers/icecream_controller')
 
