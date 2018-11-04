@@ -8,11 +8,12 @@ const routes = require('./controllers/icecream_controller')
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-app.use(express.static('assets'))
-app.use(routes)
+app.use(express.static('/assets'))
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
+app.use(routes)
+
 
 app.listen(PORT, function () {
     console.log('Server listening on PORT: ' + PORT)

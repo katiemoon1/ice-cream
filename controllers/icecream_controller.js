@@ -19,10 +19,17 @@ router.post('/api/icecream', function (req, res) {
             if (error) {
                 throw error
             }
-            res.render('index', { icecream: result })
+            res.redirect('index')
         })
     })
 
-router.update('/api/icecream', function (req, res) {
-        orm.updateOne()
+router.put('/api/icecream/:id', function (req, res) {
+        orm.updateOne('devoured', true, req.params.id, function (error, result) {
+            if (error) {
+                throw error
+            }
+            res.redirect('index')
+        })
     })
+
+module.exports = router
