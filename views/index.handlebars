@@ -10,7 +10,7 @@
             <ul>
                 {{#each icecream}}
                     {{#unless devoured}}
-                        {{> icecream/icecream-block devour=true}}
+                        {{> icecream-block devoured=true}}
                     {{/unless}}
                 {{/each}}
             </ul>

@@ -8,7 +8,7 @@ const routes = require('./controllers/icecream_controller')
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-app.use(express.static('/assets'))
+app.use(express.static(__dirname + '/assets'))
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
