@@ -1,8 +1,8 @@
 {{!-- A block that can be used to generate the list items --}}
 <li>
-    {{name}}
+    {{icecream_name}}
 
-    <button class='change-devoured' data-id='{{id}}' data-newdevour='{{devoured}}'>
+    <button type='button' id='change-devoured' class='btn btn-warning' data-id='{{id}}' data-newdevour='{{devoured}}'>
         {{#if devoured}}eat the ice cream!{{/if}}
     </button>
 </li>

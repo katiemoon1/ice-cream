@@ -9,7 +9,12 @@ const orm = {
 
         console.log(queryString)
 
-        connection.query(queryString, tableInput, cb)
+        connection.query(queryString, tableInput, function (error, result) {
+            if (error) {
+                throw error
+            }
+            cb(result)
+        })
     },
     // Inserting one new set of data into the table
     insertOne: function (icecreamuser_name, user_devoured, cb) {
@@ -17,7 +22,12 @@ const orm = {
 
         console.log(queryString)
 
-        connection.query(queryString, [icecreamuser_name, user_devoured], cb)
+        connection.query(queryString, [icecreamuser_name, user_devoured], function (error, result) {
+            if (error) {
+                throw error
+            }
+            cb(result)
+        })
     },
     // Updating one data set in the table
     updateOne: function (colVal, value, id, cb) {
@@ -25,7 +35,12 @@ const orm = {
 
         console.log(queryString)
 
-        connection.query(queryString, [colVal, value, id], cb)
+        connection.query(queryString, [colVal, value, id], function (error, result) {
+            if (error) {
+                throw error
+            }
+            cb(result)
+        })
     }
 }
 // Exporting the orm module

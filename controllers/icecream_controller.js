@@ -6,12 +6,10 @@ const router = express.Router()
 
 // Creating routes to handle all of the requests
 router.get('/', function (req, res) {
-        orm.selectAll('icecream', function (error, result) {
-            if (error) {
-                throw error
-            }
-            console.log(result)
-            res.render('index', { icecream: result })
+        orm.selectAll('icecream', function (data) {
+
+            console.log(data)
+            res.render('index', { icecream: data })
         })
     })
 
