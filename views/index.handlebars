@@ -6,7 +6,7 @@
     </div>
     {{!-- Columns for devoured vs. not devoured ice cream --}}
     <div class='row'>
-        <div class='col-md-6'>
+        <div class='col-md-6' id='ready'>
             <h5>ice cream that is ready to eat!</h5>
             <ul>
                 {{#each icecream}}
@@ -16,7 +16,7 @@
                 {{/each}}
             </ul>
         </div>
-        <div class='col-md-6'>
+        <div class='col-md-6' id='eaten'>
             <h5>ice cream that has been devoured!</h5>
             <ul>
                 {{#each icecream}}

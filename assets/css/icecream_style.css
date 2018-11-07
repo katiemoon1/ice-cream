@@ -9,15 +9,24 @@ body {
 
 h3 {
     color: white;
-    text-align: center
+    text-align: center;
+    font-family: 'Pacifico', cursive;
 }
 
 h5 {
     color: white;
     text-align: center;
+    font-family: 'Pacifico', cursive;
 }
 
 #new-icecream {
     color: white;
     text-align: center;
+    font-family: 'Pacifico', cursive;
+}
+
+#ready,
+#eaten {
+    color: white;
+    font-family: 'Merriweather', serif;
 }
