@@ -1,14 +1,20 @@
 // Requiring mysql
 const mysql = require('mysql')
 
+const connection
+
 //Creating database connection
-const connection = mysql.createConnection({
+if (process.env.JAWSDB_URL) {
+    connection = mysql.createConnection(process.env.JAWSDB_URL)
+} else {
+    connection = mysql.createConnection({
     host: 'localhost',
     port: 8889,
     user: 'root',
-    password: NULL,
+    password: 'root',
     database: 'icecream_db'
 })
+}
 
 // Checking the connection
 connection.connect(function (error) {
