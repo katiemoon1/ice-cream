@@ -1,7 +1,8 @@
 <div class='container'>
     {{!-- Header for the page --}}
-    <div class='row'>
-        <h3>Ice Cream! Yay!</h3>
+    <div class='row' id='header'>
+        <h3 class='text-center'>Ice Cream! Yay!</h3>
+        <img src='/img/ice-cream.png' alt='ice cream cone' width='225' height='250'>
     </div>
     {{!-- Columns for devoured vs. not devoured ice cream --}}
     <div class='row'>
@@ -10,7 +11,7 @@
             <ul>
                 {{#each icecream}}
                     {{#unless devoured}}
-                        {{> icecream-block devoured=true}}
+                        {{> icecream-block notDevoured=true}}
                     {{/unless}}
                 {{/each}}
             </ul>
@@ -20,15 +21,15 @@
             <ul>
                 {{#each icecream}}
                     {{#if devoured}}
-                        {{name}}
+                       <p>{{icecream_name}}</p>
                     {{/if}}
                 {{/each}}
             </ul>
         </div>
     </div>
     {{!-- Input box to put new ice cream into the list --}}
-    <form>
-        <div class='form-group'>
+    <form id='new-icecream'>
+        <div class='form-group' style='width: 50%; margin: 0 auto;'>
             <label for='inputIceCream'>Enter in your favorite ice cream!</label>
             <input type='icecream' class='form-control' id='name' placeholder='ice cream!'>
         </div>

@@ -9,25 +9,26 @@ router.get('/', function (req, res) {
         orm.selectAll('icecream', function (data) {
 
             console.log(data)
+            // console.log('fuck')
             res.render('index', { icecream: data })
         })
     })
 
 router.post('/api/icecream', function (req, res) {
-        orm.insertOne(req.body.name, req.body.devoured, function (error, result) {
-            if (error) {
-                throw error
-            }
-            res.redirect('index')
+        orm.insertOne(req.body.icecream_name, req.body.devoured, function (result) {
+
+            res.json({ id: result.insertId })
         })
     })
 
 router.put('/api/icecream/:id', function (req, res) {
-        orm.updateOne('devoured', true, req.params.id, function (error, result) {
-            if (error) {
-                throw error
-            }
-            res.redirect('index')
+        orm.updateOne('devoured', 1, req.params.id, function (result) {
+            console.log('motherfucker')
+            // res.status(200)
+            res.json({
+                success: true,
+                something: 'idk'
+            })
         })
     })
 

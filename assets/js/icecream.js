@@ -1,21 +1,34 @@
 $(document).ready(() => {
 
-$('#change-devoured').on(click, function (event) {
+$('.change-devoured').on('click', function (event) {
     var id = $(this).data('id')
-    var newDevour = $(this).data('newdevour')
 
-    var newDevourState = {
-        devoured: newDevour
-    }
-
-    $.ajax('/api/icecream' + id, {
+    $.ajax('/api/icecream/' + id, {
         type: 'PUT',
-        data: newDevourState
+        data: { devoured: 1 }
+    }).then(
+        function (response) {
+            console.log(response)
+            console.log('Changed ' + id)
+
+            window.location = '/'
+        }
+    )
+})
+
+$('#new-icecream').on('submit', function (event) {
+    event.preventDefault()
+
+    var newName = $('#name').val().trim()
+
+    $.ajax('/api/icecream', {
+        type: 'POST',
+        data: { icecream_name: newName, devoured: 0 }
     }).then(
         function () {
-            console.log('Changed ' + id + ' to ' + newDevour)
+            console.log('Created a new ice cream in the database!')
 
-            location.reload()
+            window.location = '/'
         }
     )
 })

@@ -18,7 +18,7 @@ const orm = {
     },
     // Inserting one new set of data into the table
     insertOne: function (icecreamuser_name, user_devoured, cb) {
-        let queryString = 'INSERT INTO icecream (icecream_name, devoured) VALUES (??, ??)'
+        let queryString = 'INSERT INTO icecream (icecream_name, devoured) VALUES (?, ?)'
 
         console.log(queryString)
 
@@ -35,10 +35,11 @@ const orm = {
 
         console.log(queryString)
 
-        connection.query(queryString, [colVal, value, id], function (error, result) {
+        const q = connection.query(queryString, [colVal, value, id], function (error, result) {
             if (error) {
                 throw error
             }
+            console.log(q.sql)
             cb(result)
         })
     }
