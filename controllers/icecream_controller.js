@@ -9,7 +9,7 @@ router.get('/', function (req, res) {
         orm.selectAll('icecream', function (data) {
 
             console.log(data)
-            // console.log('fuck')
+
             res.render('index', { icecream: data })
         })
     })
@@ -23,7 +23,7 @@ router.post('/api/icecream', function (req, res) {
 
 router.put('/api/icecream/:id', function (req, res) {
         orm.updateOne('devoured', 1, req.params.id, function (result) {
-            console.log('motherfucker')
+
             // res.status(200)
             res.json({
                 success: true,
